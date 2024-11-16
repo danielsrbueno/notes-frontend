@@ -1,16 +1,13 @@
-import { withStyles } from "@material-ui/core/styles";
-import Radio from "@material-ui/core/Radio";
+import { styled } from '@mui/material/styles';
+import Radio from '@mui/material/Radio';
 
 export default function RadioButton({ selectedValue, handleChange }) {
-  const CustomRadio = withStyles({
-    root: {
-      color: "#2e1065",
-      "&$checked": {
-        color: "#5b21b6",
-      },
+  const CustomRadio = styled(Radio)(({ theme }) => ({
+    color: "#2e1065",
+    "&.Mui-checked": {
+      color: "#5b21b6",
     },
-    checked: {},
-  })((props) => <Radio color="default" {...props} />);
+  }));
 
   return (
     <div className="text-zinc-50 text-base font-semibold mt-6 -ml-3 flex justify-center flex-row">
